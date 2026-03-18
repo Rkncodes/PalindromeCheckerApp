@@ -43,14 +43,14 @@ public class PalindromeCheckerApp {
         }
 
 // Build reversed word using stack
-        String reversed = "";
+        String reversedUC5 = "";
 
         while (!stack.isEmpty()) {
-            reversed += stack.pop();
+            reversedUC5 += stack.pop();
         }
 
 // Compare
-        if (wordUC5.equals(reversed)) {
+        if (wordUC5.equals(reversedUC5)) {
             System.out.println(wordUC5 + " is a Palindrome (Stack Method)");
         } else {
             System.out.println(wordUC5 + " is NOT a Palindrome (Stack Method)");
