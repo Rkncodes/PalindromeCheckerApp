@@ -1,27 +1,25 @@
-import java.util.*;
+public class UC9_RecursiveCheck {
 
-public class UC8_LinkedListCheck {
+    public static boolean isPalindrome(String str, int left, int right) {
+
+        // Base case
+        if (left >= right)
+            return true;
+
+        // If characters not equal → not palindrome
+        if (str.charAt(left) != str.charAt(right))
+            return false;
+
+        // Recursive call
+        return isPalindrome(str, left + 1, right - 1);
+    }
 
     public static void main(String[] args) {
 
-        String word = "madam";
-        LinkedList<Character> list = new LinkedList<>();
+        String word = "racecar";
 
-        // Add characters to linked list
-        for (char c : word.toCharArray()) {
-            list.add(c);
-        }
+        boolean result = isPalindrome(word, 0, word.length() - 1);
 
-        boolean isPalindrome = true;
-
-        // Compare first and last elements
-        while (list.size() > 1) {
-            if (!list.removeFirst().equals(list.removeLast())) {
-                isPalindrome = false;
-                break;
-            }
-        }
-
-        System.out.println(word + (isPalindrome ? " is Palindrome" : " is NOT Palindrome"));
+        System.out.println(word + (result ? " is Palindrome" : " is NOT Palindrome"));
     }
 }
