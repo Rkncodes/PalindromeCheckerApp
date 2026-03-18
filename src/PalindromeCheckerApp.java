@@ -10,9 +10,12 @@ public class PalindromeCheckerApp {
         System.out.println("Welcome to the Palindrome Checker Application!");
         System.out.println("Program ready...\n");
 
+        // UC3 — Hardcoded Result
+        System.out.println("madam is a Palindrome");
+
         // UC4 — Character Array Based Palindrome
-        String word = "level";
-        char[] chars = word.toCharArray();
+        String wordUC4 = "level";
+        char[] chars = wordUC4.toCharArray();
 
         boolean isPalindrome = true;
 
@@ -24,9 +27,9 @@ public class PalindromeCheckerApp {
         }
 
         if (isPalindrome) {
-            System.out.println(word + " is a Palindrome");
+            System.out.println(wordUC4 + " is a Palindrome");
         } else {
-            System.out.println(word + " is NOT a Palindrome");
+            System.out.println(wordUC4 + " is NOT a Palindrome");
         }
     }
 }
