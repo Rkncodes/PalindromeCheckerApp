@@ -1,8 +1,7 @@
-public class UC10_CaseInsensitiveCheck {
+class PalindromeService {
 
-    public static boolean isPalindrome(String input) {
+    public boolean isPalindrome(String input) {
 
-        // Remove spaces & convert to lowercase
         String cleaned = input.replaceAll("\\s+", "").toLowerCase();
 
         int left = 0;
@@ -17,14 +16,19 @@ public class UC10_CaseInsensitiveCheck {
 
         return true;
     }
+}
+
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        String text = "A man a plan a canal Panama";
+        PalindromeService service = new PalindromeService();
 
-        boolean result = isPalindrome(text);
+        String text = "Madam";
 
-        System.out.println("\"" + text + "\"" +
+        boolean result = service.isPalindrome(text);
+
+        System.out.println(text +
                 (result ? " is Palindrome" : " is NOT Palindrome"));
     }
 }
