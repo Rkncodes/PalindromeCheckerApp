@@ -2,52 +2,44 @@ import java.util.*;
 
 public class PalindromeCheckerApp {
 
-    // ===== UC12 — Strategy Pattern =====
-
-    // Strategy Interface
-    interface PalindromeStrategy {
-        boolean check(String input);
+    // Reverse Method
+    public static boolean reverseMethod(String input) {
+        String reversed = new StringBuilder(input).reverse().toString();
+        return input.equalsIgnoreCase(reversed);
     }
 
-    // Strategy 1 — Reverse String Method
-    static class ReverseStrategy implements PalindromeStrategy {
-        public boolean check(String input) {
-            String reversed = new StringBuilder(input).reverse().toString();
-            return input.equalsIgnoreCase(reversed);
+    // Two Pointer Method
+    public static boolean twoPointerMethod(String input) {
+
+        input = input.toLowerCase();
+        int left = 0;
+        int right = input.length() - 1;
+
+        while (left < right) {
+            if (input.charAt(left) != input.charAt(right))
+                return false;
+            left++;
+            right--;
         }
+        return true;
     }
 
-    // Strategy 2 — Two Pointer Method
-    static class TwoPointerStrategy implements PalindromeStrategy {
-        public boolean check(String input) {
-
-            input = input.toLowerCase();
-            int left = 0;
-            int right = input.length() - 1;
-
-            while (left < right) {
-                if (input.charAt(left) != input.charAt(right))
-                    return false;
-                left++;
-                right--;
-            }
-            return true;
-        }
-    }
-
-    // ===== MAIN METHOD =====
+    // ===== UC13 MAIN METHOD =====
     public static void main(String[] args) {
 
-        String word = "Level";
+        String word = "racecar";
 
-        PalindromeStrategy strategy;
+        // Reverse Method Time
+        long start1 = System.nanoTime();
+        reverseMethod(word);
+        long end1 = System.nanoTime();
 
-        // Using Reverse Strategy
-        strategy = new ReverseStrategy();
-        System.out.println("Reverse Strategy: " + strategy.check(word));
+        // Two Pointer Method Time
+        long start2 = System.nanoTime();
+        twoPointerMethod(word);
+        long end2 = System.nanoTime();
 
-        // Using Two Pointer Strategy
-        strategy = new TwoPointerStrategy();
-        System.out.println("Two Pointer Strategy: " + strategy.check(word));
+        System.out.println("Reverse Method Time: " + (end1 - start1) + " ns");
+        System.out.println("Two Pointer Method Time: " + (end2 - start2) + " ns");
     }
 }
