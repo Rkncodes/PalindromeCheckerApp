@@ -10,15 +10,7 @@ public class PalindromeCheckerApp {
         System.out.println("Welcome to the Palindrome Checker Application!");
         System.out.println("Program ready...\n");
 
-        // UC2 — Hardcoded Palindrome
-        String word = "madam";
-
-        String reversed = new StringBuilder(word).reverse().toString();
-
-        if (word.equals(reversed)) {
-            System.out.println(word + " is a Palindrome");
-        } else {
-            System.out.println(word + " is NOT a Palindrome");
-        }
+        // UC3 — Print Hardcoded Result
+        System.out.println("madam is a Palindrome");
     }
 }
