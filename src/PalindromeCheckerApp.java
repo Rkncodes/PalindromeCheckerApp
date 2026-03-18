@@ -1,22 +1,22 @@
 import java.util.*;
 
-public class UC7_DequeCheck {
+public class UC8_LinkedListCheck {
 
     public static void main(String[] args) {
 
-        String word = "level";
-        Deque<Character> deque = new ArrayDeque<>();
+        String word = "madam";
+        LinkedList<Character> list = new LinkedList<>();
 
-        // Add characters to deque
+        // Add characters to linked list
         for (char c : word.toCharArray()) {
-            deque.addLast(c);
+            list.add(c);
         }
 
         boolean isPalindrome = true;
 
-        // Compare front and back
-        while (deque.size() > 1) {
-            if (!deque.removeFirst().equals(deque.removeLast())) {
+        // Compare first and last elements
+        while (list.size() > 1) {
+            if (!list.removeFirst().equals(list.removeLast())) {
                 isPalindrome = false;
                 break;
             }
