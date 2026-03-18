@@ -10,7 +10,23 @@ public class PalindromeCheckerApp {
         System.out.println("Welcome to the Palindrome Checker Application!");
         System.out.println("Program ready...\n");
 
-        // UC3 — Print Hardcoded Result
-        System.out.println("madam is a Palindrome");
+        // UC4 — Character Array Based Palindrome
+        String word = "level";
+        char[] chars = word.toCharArray();
+
+        boolean isPalindrome = true;
+
+        for (int i = 0; i < chars.length / 2; i++) {
+            if (chars[i] != chars[chars.length - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        if (isPalindrome) {
+            System.out.println(word + " is a Palindrome");
+        } else {
+            System.out.println(word + " is NOT a Palindrome");
+        }
     }
 }
